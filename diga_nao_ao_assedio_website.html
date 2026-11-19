@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Website educativo sobre o assédio nas escolas: compreender, prevenir e agir.">
+<title>Diga Não ao Assédio | Educação e Respeito</title>
+<style>
+:root{--navy:#10243b;--blue:#1769aa;--cyan:#4fc3d7;--gold:#ffbd59;--ink:#233449;--muted:#617187;--bg:#f5f8fc;--white:#fff;--line:#e5ebf3;--shadow:0 18px 50px rgba(16,36,59,.12)}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;color:var(--navy);letter-spacing:.2px}
+.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:white;font-size:21px}
+nav{display:flex;align-items:center;gap:18px}
+nav a{font-size:13px;font-weight:700;color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--blue)}
+.menu-btn{display:none;background:none;border:0;font-size:24px;color:var(--navy)}
+.hero{background:linear-gradient(115deg,#10243b 0%,#145d93 64%,#1c92ad 100%);color:white;overflow:hidden;position:relative}
+.hero:after{content:"";position:absolute;width:480px;height:480px;border:1px solid rgba(255,255,255,.15);border-radius:50%;right:-100px;top:-160px;box-shadow:0 0 0 55px rgba(255,255,255,.04),0 0 0 110px rgba(255,255,255,.03)}
+.hero-inner{max-width:1180px;margin:auto;padding:86px 22px 90px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:50px;position:relative;z-index:1}
+.eyebrow{color:#bcecf5;font-weight:800;text-transform:uppercase;letter-spacing:2px;font-size:12px}
+h1{font-size:clamp(38px,5vw,66px);line-height:1.07;margin:15px 0 20px;letter-spacing:-1.6px}
+.hero p{font-size:18px;color:#e5f4fb;max-width:590px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;padding:13px 19px;border-radius:12px;font-weight:800;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:.2s}
+.btn-primary{background:var(--gold);color:var(--navy)}
+.btn-primary:hover{transform:translateY(-2px);filter:brightness(1.04)}
+.btn-outline{border-color:rgba(255,255,255,.55);color:white}
+.hero-art{min-height:320px;display:grid;place-items:center}
+.art-card{width:min(100%,390px);padding:26px;border:1px solid rgba(255,255,255,.25);border-radius:28px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);box-shadow:0 25px 60px rgba(0,0,0,.15)}
+.art-card .big{font-size:78px;text-align:center}
+.art-card h3{text-align:center;font-size:22px;margin:0 0 8px}
+.art-card p{text-align:center;font-size:15px;margin:0;color:#e3f6ff}
+section{padding:76px 22px}
+.container{max-width:1180px;margin:auto}
+.section-head{max-width:750px;margin:0 auto 38px;text-align:center}
+.section-head .eyebrow{color:var(--blue)}
+h2{font-size:clamp(28px,3.4vw,42px);line-height:1.2;color:var(--navy);margin:10px 0 13px}
+.section-head p{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:white;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 8px 25px rgba(16,36,59,.045)}
+.card h3{margin:10px 0;color:var(--navy)}
+.card p{color:var(--muted);margin:0}
+.icon{font-size:30px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.panel{background:white;border:1px solid var(--line);padding:30px;border-radius:24px}
+.panel h3{color:var(--navy);margin-top:0}
+.list{padding-left:20px}
+.list li{margin:9px 0}
+.tinted{background:#eaf4fb}
+.type-card{border-top:4px solid var(--cyan)}
+.warning{background:#fff7e8;border:1px solid #ffe0a5;border-radius:18px;padding:20px;color:#684b1d}
+.steps{counter-reset:step}
+.step{display:flex;gap:16px;margin:18px 0}
+.step-num{flex:0 0 38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#e5f5fb;color:#12668b;font-weight:900}
+.quote{background:var(--navy);color:white;border-radius:24px;padding:35px;text-align:center;font-size:clamp(21px,3vw,30px);font-weight:800}
+.quote small{display:block;font-size:14px;color:#bcecf5;margin-top:15px;font-weight:500}
+details{background:white;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:12px 0}
+summary{font-weight:800;color:var(--navy);cursor:pointer}
+details p{color:var(--muted);margin-bottom:0}
+.quiz{background:white;border-radius:22px;border:1px solid var(--line);padding:26px}
+.quiz button{margin:7px 7px 0 0;padding:10px 14px;border-radius:10px;border:1px solid #d5e0ec;background:#f5f8fc;cursor:pointer;font-weight:700;color:var(--ink)}
+.quiz button:hover{border-color:var(--blue);background:#eaf4fb}
+#quizResult{font-weight:800;margin-top:15px;color:var(--blue)}
+footer{background:#0c1c2e;color:#d8e6f1;padding:38px 22px}
+footer .container{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
+footer p{margin:5px 0;color:#a8bacb;font-size:14px}
+.backtop{position:fixed;bottom:18px;right:18px;background:var(--blue);color:white;border-radius:50%;width:45px;height:45px;display:grid;place-items:center;text-decoration:none;box-shadow:var(--shadow)}
+@media(max-width:850px){nav{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:18px 24px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}nav.open{display:flex}.menu-btn{display:block}.hero-inner,.split{grid-template-columns:1fr}.hero-inner{padding:58px 22px}.hero-art{min-height:auto}.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}section{padding:56px 18px}.hero p{font-size:16px}.card,.panel{padding:22px}.nav{padding:12px 18px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="nav">
+  <div class="brand"><span class="logo">✋</span><span>DIGA NÃO AO ASSÉDIO</span></div>
+  <button class="menu-btn" aria-label="Abrir menu" onclick="toggleMenu()">☰</button>
+  <nav id="navLinks">
+   <a href="#inicio">Início</a><a href="#tema">O tema</a><a href="#tipos">Tipos</a><a href="#impactos">Consequências</a><a href="#prevenir">Prevenção</a><a href="#ajuda">O que fazer</a>
+  </nav>
+ </div>
+</header>
+<main>
+<section class="hero" id="inicio">
+ <div class="hero-inner">
+  <div>
+   <div class="eyebrow">Uma escola segura começa connosco</div>
+   <h1>Respeito não é opção.<br>É um direito.</h1>
+   <p>O assédio escolar pode deixar marcas profundas. Informar, ouvir e agir são passos essenciais para construir uma escola onde todos aprendem sem medo.</p>
+   <div class="actions"><a class="btn btn-primary" href="#tema">Conhecer o problema</a><a class="btn btn-outline" href="#ajuda">Como posso ajudar?</a></div>
+  </div>
+  <div class="hero-art">
+   <div class="art-card"><div class="big">🤝</div><h3>Juntos contra o assédio</h3><p>Não fiques em silêncio. Apoia, respeita e procura ajuda.</p></div>
+  </div>
+ </div>
+</section>
+<section id="tema">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">Introdução</span><h2>O que é o assédio escolar?</h2><p>É um comportamento agressivo ou abusivo dirigido a alguém, que pode ocorrer repetidamente e envolver desequilíbrio de poder. Pode ser praticado presencialmente ou através da internet.</p></div>
+  <div class="split">
+   <div class="panel"><h3>Porque devemos falar sobre isso?</h3><p>O assédio prejudica o ambiente escolar, a dignidade e a segurança dos alunos. Reconhecer os sinais e agir cedo ajuda a prevenir situações mais graves e a promover relações saudáveis.</p></div>
+   <div class="panel"><h3>Objectivos do website</h3><ul class="list"><li>Informar sobre o assédio e as suas formas.</li><li>Identificar causas, consequências e sinais de alerta.</li><li>Promover respeito, empatia e inclusão.</li><li>Apresentar formas práticas de prevenção e procura de ajuda.</li></ul></div>
+  </div>
+ </div>
+</section>
+<section class="tinted" id="tipos">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">Identificar</span><h2>Tipos de assédio</h2><p>O assédio pode manifestar-se de diferentes maneiras. Todas merecem atenção.</p></div>
+  <div class="grid">
+   <article class="card type-card"><div class="icon">👊</div><h3>Físico</h3><p>Bater, empurrar, pontapear, bloquear a passagem ou danificar os pertences de alguém.</p></article>
+   <article class="card type-card"><div class="icon">🗣️</div><h3>Verbal</h3><p>Insultar, ameaçar, humilhar, fazer comentários ofensivos ou chamar nomes repetidamente.</p></article>
+   <article class="card type-card"><div class="icon">🧠</div><h3>Psicológico</h3><p>Intimidar, excluir, espalhar rumores, manipular ou provocar medo e sofrimento emocional.</p></article>
+   <article class="card type-card"><div class="icon">📱</div><h3>Cyberbullying</h3><p>Usar mensagens, redes sociais ou grupos online para humilhar, ameaçar ou divulgar conteúdos prejudiciais.</p></article>
+   <article class="card type-card"><div class="icon">🚫</div><h3>Sexual</h3><p>Comentários, gestos, contacto ou pressão de natureza sexual sem consentimento. Deve ser levado a sério e comunicado a um adulto de confiança.</p></article>
+   <article class="card type-card"><div class="icon">🧍‍♀️🧍</div><h3>Exclusão e discriminação</h3><p>Perseguir ou tratar alguém de forma humilhante por características pessoais, origem, aparência, deficiência ou outras diferenças.</p></article>
+  </div>
+ </div>
+</section>
+<section id="causas">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">Compreender</span><h2>Possíveis causas e factores de risco</h2><p>Não existe uma única causa. O comportamento pode ser influenciado por vários factores e nunca deve ser justificado.</p></div>
+  <div class="grid">
+   <div class="card"><div class="icon">🏠</div><h3>Contexto familiar e social</h3><p>Modelos de agressividade, conflitos ou falta de apoio podem influenciar comportamentos.</p></div>
+   <div class="card"><div class="icon">👥</div><h3>Pressão dos colegas</h3><p>Alguns alunos podem agredir para obter atenção, aprovação ou sensação de poder.</p></div>
+   <div class="card"><div class="icon">🏫</div><h3>Ambiente escolar</h3><p>Falta de supervisão, regras pouco claras ou normalização de insultos podem facilitar o problema.</p></div>
+  </div>
+ </div>
+</section>
+<section class="tinted" id="impactos">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">Consequências</span><h2>O assédio afecta a vida escolar</h2><p>Os efeitos podem ser diferentes para cada pessoa, mas ninguém deve ter de enfrentar esta situação sozinho.</p></div>
+  <div class="grid">
+   <div class="card"><h3>💔 Saúde emocional</h3><p>Medo, tristeza, vergonha, ansiedade, baixa autoestima e sensação de isolamento.</p></div>
+   <div class="card"><h3>📚 Aprendizagem</h3><p>Dificuldade de concentração, queda no rendimento, faltas e, em alguns casos, abandono escolar.</p></div>
+   <div class="card"><h3>🌍 Relações sociais</h3><p>Perda de confiança, dificuldade em fazer amizades e receio de participar nas actividades.</p></div>
+  </div>
+ </div>
+</section>
+<section id="prevenir">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">Soluções e medidas de prevenção</span><h2>Podemos mudar o ambiente escolar</h2><p>A prevenção é uma responsabilidade partilhada entre alunos, professores, famílias e direcção.</p></div>
+  <div class="split">
+   <div class="panel"><h3>Na escola</h3><ul class="list"><li>Estabelecer regras claras contra o assédio.</li><li>Promover palestras, debates e campanhas de sensibilização.</li><li>Supervisionar zonas de risco e ouvir os alunos.</li><li>Disponibilizar formas seguras e confidenciais de comunicar situações.</li><li>Intervir rapidamente, com justiça e sem humilhar ninguém.</li></ul></div>
+   <div class="panel"><h3>Entre alunos</h3><ul class="list"><li>Tratar todos com respeito.</li><li>Não participar nem incentivar agressões.</li><li>Não partilhar vídeos, fotografias ou mensagens ofensivas.</li><li>Apoiar quem está a ser alvo e chamar um adulto.</li><li>Praticar empatia e resolver conflitos sem violência.</li></ul></div>
+  </div>
+ </div>
+</section>
+<section id="ajuda" class="tinted">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">Recomendações</span><h2>O que fazer se acontecer?</h2><p>Se estiveres a passar por assédio, ou se testemunhares uma situação, estas acções podem ajudar.</p></div>
+  <div class="grid">
+   <div class="card"><h3>🙋 Se és vítima</h3><ol class="list"><li>Se possível, afasta-te para um local seguro.</li><li>Conta o que aconteceu a um adulto de confiança.</li><li>Guarda mensagens ou provas digitais, sem as divulgar.</li><li>Se não te ouvirem, procura outro adulto ou a direcção.</li></ol></div>
+   <div class="card"><h3>🫶 Se és testemunha</h3><ol class="list"><li>Não te juntes à agressão nem rias.</li><li>Oferece apoio à pessoa afectada.</li><li>Chama um professor ou responsável.</li><li>Se for seguro, ajuda a interromper a situação sem te colocares em risco.</li></ol></div>
+   <div class="card"><h3>👩‍🏫 Se és professor ou encarregado</h3><ol class="list"><li>Escuta sem culpar ou minimizar.</li><li>Regista informações relevantes com privacidade.</li><li>Protege a segurança e acompanha a situação.</li><li>Envolve os responsáveis escolares e apoio especializado quando necessário.</li></ol></div>
+  </div>
+  <div class="warning" style="margin-top:22px"><strong>Importante:</strong> se houver perigo imediato, violência grave ou ameaça, procura ajuda urgente de um adulto responsável e dos serviços de emergência disponíveis na tua localidade. Não enfrentes sozinho uma situação perigosa.</div>
+ </div>
+</section>
+<section id="recomendacoes">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">Todos podemos contribuir</span><h2>Recomendações para a comunidade escolar</h2></div>
+  <div class="panel">
+   <div class="steps">
+    <div class="step"><span class="step-num">1</span><div><strong>Alunos:</strong> respeitem as diferenças, pensem antes de publicar e comuniquem situações preocupantes.</div></div>
+    <div class="step"><span class="step-num">2</span><div><strong>Professores:</strong> criem um ambiente de confiança, intervenham e acompanhem os alunos.</div></div>
+    <div class="step"><span class="step-num">3</span><div><strong>Encarregados de educação:</strong> conversem com os filhos, observem mudanças de comportamento e procurem a escola.</div></div>
+    <div class="step"><span class="step-num">4</span><div><strong>Direcção:</strong> implemente procedimentos de denúncia, prevenção, acompanhamento e protecção.</div></div>
+   </div>
+  </div>
+ </div>
+</section>
+<section>
+ <div class="container"><div class="quote">“A tua diferença não é motivo para te magoarem. Na escola, todos merecem respeito e segurança.”<small>Uma mensagem de sensibilização</small></div></div>
+</section>
+<section id="quiz">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">Aprender e reflectir</span><h2>Mini-questionário</h2><p>Testa os teus conhecimentos sobre o assédio escolar.</p></div>
+  <div class="quiz"><strong>Se vires um colega a ser humilhado repetidamente, o que é melhor fazer?</strong><br>
+   <button onclick="answer(false)">Rir para acompanhar o grupo</button>
+   <button onclick="answer(true)">Apoiar e comunicar a um adulto de confiança</button>
+   <button onclick="answer(false)">Gravar e publicar o vídeo</button>
+   <div id="quizResult" aria-live="polite"></div>
+  </div>
+ </div>
+</section>
+<section id="conclusao" class="tinted">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">Conclusão</span><h2>Uma escola sem assédio é possível</h2><p>O assédio escolar não deve ser ignorado, normalizado ou escondido. A informação, a prevenção, a coragem de pedir ajuda e o compromisso de toda a comunidade podem tornar a escola um lugar mais seguro, inclusivo e acolhedor. Cada atitude de respeito conta.</p></div>
+  <div class="panel"><h3>Referências bibliográficas e recursos para aprofundar</h3><ul class="list">
+   <li>UNESCO — recursos e informação sobre violência e bullying nas escolas: <a href="https://www.unesco.org/en/health-education/violence-bullying" target="_blank" rel="noopener">UNESCO: Violence and bullying</a>.</li>
+   <li>UNICEF — materiais de protecção, bem-estar e segurança de crianças e adolescentes: <a href="https://www.unicef.org/" target="_blank" rel="noopener">UNICEF</a>.</li>
+   <li>Organização Mundial da Saúde — informação sobre saúde mental e bem-estar: <a href="https://www.who.int/" target="_blank" rel="noopener">OMS</a>.</li>
+   <li>Regulamentos internos, documentos e orientações da própria escola (consultar a direcção).</li>
+  </ul><p style="color:var(--muted)">As fontes devem ser consultadas e complementadas pelo grupo durante a investigação.</p></div>
+ </div>
+</section>
+</main>
+<footer><div class="container"><div><strong>✋ DIGA NÃO AO ASSÉDIO</strong><p>Website educativo de sensibilização escolar.</p></div><div><p>Promova respeito. Seja parte da solução.</p><p>© <span id="year"></span> — Conteúdo educativo</p></div></div></footer>
+<a class="backtop" href="#inicio" aria-label="Voltar ao topo">↑</a>
+<script>
+function toggleMenu(){document.getElementById('navLinks').classList.toggle('open')}
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+function answer(correct){const el=document.getElementById('quizResult');el.textContent=correct?'Muito bem! Apoiar a vítima e procurar ajuda de um adulto responsável é uma atitude segura.':'Não é a melhor escolha. Evita incentivar a agressão e procura ajudar de forma segura.';el.style.color=correct?'#16804a':'#b45309'}
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
